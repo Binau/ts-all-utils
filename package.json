@@ -3,8 +3,13 @@
   "version": "1.0.8",
   "author": "Binau",
   "license": "SEE LICENSE IN CC-BY-4.0",
-  "repository": {},
-  "bugs": {},
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Binau/ts-all-utils.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/owner/ts-all-utils/issues"
+  },
   "dependencies": {},
   "devDependencies": {
     "@types/mocha": "^5.2.5",
