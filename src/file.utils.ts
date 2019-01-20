@@ -11,8 +11,10 @@ export class FileUtils {
      * @param fileUrl
      * @param options
      */
-    public static loadJson(fileUrl: string, options: { encoding: string; flag?: string; } | string = 'utf8') {
-        return FS.promises.readFile(fileUrl, options).then(b => JSON.parse(StringUtils.fromBuffer(b)));
+    public static loadJson<T>(fileUrl: string, options: { encoding: string; flag?: string; } | string = 'utf8'): Promise<T> {
+        return FS.promises.readFile(fileUrl, options).then(
+            b => JSON.parse(StringUtils.fromBuffer(b)) as T
+        );
     }
 
     /**
@@ -20,7 +22,7 @@ export class FileUtils {
      * @param fileUrl
      * @param data
      */
-    public static writeJson(fileUrl: string, data: any, options?: { encoding?: string | null, mode?: string | number, flag?: string | number } | string | null) {
+    public static writeJson(fileUrl: string, data: any, options?: { encoding?: string | null, mode?: string | number, flag?: string | number } | string | null): Promise<void> {
         return FS.promises.writeFile(fileUrl, JSON.stringify(data), options);
     }
 }
