@@ -23,6 +23,6 @@ export class FileUtils {
      * @param data
      */
     public static writeJson(fileUrl: string, data: any, options?: { encoding?: string | null, mode?: string | number, flag?: string | number } | string | null): Promise<void> {
-        return FS.promises.writeFile(fileUrl, JSON.stringify(data), options);
+        return FS.promises.writeFile(fileUrl, JSON.stringify(data, null, 2), options);
     }
 }
