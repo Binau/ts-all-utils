@@ -20,7 +20,7 @@ export class FileUtils {
      * @param fileUrl
      * @param data
      */
-    public static writeJson(fileUrl: string, data: any) {
-        return FS.promises.writeFile(fileUrl, JSON.stringify(data));
+    public static writeJson(fileUrl: string, data: any, options?: { encoding?: string | null, mode?: string | number, flag?: string | number } | string | null) {
+        return FS.promises.writeFile(fileUrl, JSON.stringify(data), options);
     }
 }
