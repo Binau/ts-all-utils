@@ -32,8 +32,12 @@ export class FileNodeUtils {
      * @param url
      */
     public static async fileExist(url: string): Promise<boolean> {
-        const fileStat = await promises.stat(url);
-        return fileStat.isFile();
+        try {
+            const fileStat = await promises.stat(url);
+            return fileStat.isFile();
+        } catch (e) {
+            return false;
+        }
     }
 
     /**
@@ -41,7 +45,11 @@ export class FileNodeUtils {
      * @param url
      */
     public static async directoryExist(url: string): Promise<boolean> {
-        const fileStat = await promises.stat(url);
-        return fileStat.isDirectory();
+        try {
+            const fileStat = await promises.stat(url);
+            return fileStat.isDirectory();
+        } catch (e) {
+            return false;
+        }
     }
 }
