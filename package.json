@@ -21,8 +21,8 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
+    "start-js": "node lib",
     "build-js": "tsc -d -p tsconfig-js.json",
-    "publish-patch": "npm run build-js && npm version patch && npm publish",
-    "test": "mocha --timeout 5000 --require ts-node/register ./test/*.ts"
+    "publish-patch": "npm run build-js && npm version patch && npm publish"
   }
 }
