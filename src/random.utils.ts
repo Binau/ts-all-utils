@@ -1,5 +1,9 @@
 export class RandomUtils {
 
+    public static ALPHA_RANGE = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    public static NUM_RANGE = '0123456789';
+    public static ALPHA_NUM_RANGE = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
     public static randomChar(range: string): string {
         if (!range) return null;
         return range.charAt(Math.random() * range.length);
